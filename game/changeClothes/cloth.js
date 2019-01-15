@@ -21,13 +21,18 @@ class Cloth{
         document.dispatchEvent(new CustomEvent('createGhost',{
             detail:{
                 'absPos':{
-                    x:e.screenX,
-                    y:e.screenY
-                },
-                'relPos':{
                     x:e.clientX,
                     y:e.clientY
-                }
+                },
+                'relPos':{
+                    x:e.offsetX,
+                    y:e.offsetY
+                },
+                'rectPos':{
+                    'top': this.content.getBoundingClientRect().top,
+                    'left': this.content.getBoundingClientRect().left
+                },
+                'img': this.img
             }
         }))
     }
