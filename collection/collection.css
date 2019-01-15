@@ -2,6 +2,9 @@ html, body{
     margin:0;
     padding:0;
 }
+a{
+    text-decoration: none;
+}
 body{
     background-color: rgba(253, 239, 230);
 }
@@ -71,16 +74,25 @@ body{
     transition:color 0.4s,border 0.4s;
 }
 .container{
-    max-width: 1225px;
+    max-width: 1215px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin: 20px auto 10px auto;
+    background-color: #ffbd9d;
 }
 .container img{
     width: 300px;
     height: 300px;
     margin-bottom: 5px;
+    position: relative;
+    transition: transform 1s;
+    -webkit-transition: transform 1s;
+    box-sizing: border-box;
+}
+.container img:hover{
+    transform: translate(-10px,-10px);
+    border: solid 5px #ffbd9d;
 }
 
 footer{
@@ -106,7 +118,7 @@ footer img{
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.8);
     z-index: 9999;
     display: flex;
     justify-content: space-between;
