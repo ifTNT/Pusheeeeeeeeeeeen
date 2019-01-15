@@ -96,6 +96,8 @@ footer img{
 
 .container{
     height: calc(100vh - 100px);
+    width: 100%;
+    position: relative;
 }
 
 .butt{
@@ -110,4 +112,16 @@ footer img{
     width: 100%;
     max-width: 800px;
     height: auto;
+}
+
+.container .ghostlayer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ghostlayer img{
+    border: solid 2px lightsalmon;
 }
