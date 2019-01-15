@@ -5,10 +5,56 @@ html, body{
 body{
     background-color: rgba(253, 239, 230);
 }
+.title{
+    background-color:rgba(253, 239, 230);
+    height:500px;
+    color:#5b4b00;
+    text-align: center;
+}
+
+.title img{
+    animation: fadein 3s;
+}
+
+.text{
+    font-family: 'Coiny', cursive;
+    font-size: 60px;
+    padding-top:118px;
+    animation: fadein 3s;
+}
+
 .banner{
     width: 100%;
     height: 300px;
     background-color: rgba(253, 239, 230);
+}
+.selectBar{
+    display: flex;
+    justify-content: flex-end;
+    height:50px;
+    background-color:#ffbd9d;
+}
+
+.selectBar a{
+    box-sizing: border-box;
+    font-size: 25px;
+    letter-spacing: 2px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    /*border:2px solid #ff9d6f;*/
+    /*transform: rotate(-12deg);*/
+    padding:10px;
+    margin-right:20px;
+    font-family: 'Righteous', cursive;
+}
+
+.selectBar a:hover{
+    color:white;
+    cursor:pointer;
+    border-bottom: 10px solid #ffa273;
+    transition:color 0.4s,border 0.4s;
 }
 .menu{
     display: flex;
