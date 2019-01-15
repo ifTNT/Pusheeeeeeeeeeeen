@@ -220,7 +220,7 @@ footer img{
 
 .loading{
     background-color: rgba(0, 0, 0, 0.90);
-    height:721px;
+    height:100vh;
     width:auto;
     display: flex;
     justify-content: center;
