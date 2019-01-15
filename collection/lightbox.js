@@ -14,7 +14,9 @@ class lightBox{
         this.hide = this.hide.bind(this);
         this.showNext = this.showNext.bind(this);
         this.showPrev = this.showPrev.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
         this.contain.addEventListener('click', this.hide);
+        document.addEventListener('keydown', this.handleKeyDown);
         this.nextBtn.addEventListener('click', this.showNext);
         this.prevBtn.addEventListener('click', this.showPrev);
         this.hide();
@@ -29,6 +31,14 @@ class lightBox{
         this.img = _img;
         this.id = _id;
         this.contain.querySelector("img").src = this.img;
+    }
+    handleKeyDown(e){
+        if(e.key === "ArrowRight"){
+            this.showNext(e);
+        }
+        if(e.key === "ArrowLeft"){
+            this.showPrev(e);
+        }
     }
     showNext(e){
         e.stopPropagation();
