@@ -1,7 +1,11 @@
 body,html{
     margin: 0px;
     padding:0px;
+<<<<<<< HEAD
+    overflow:hidden;
+=======
     overflow-x: hidden;
+>>>>>>> 4f172ec27d51fde065957d630f61e32a3d0c84df
 }
 
 @keyframes fadein {
@@ -246,3 +250,19 @@ footer img{
     border-bottom: 10px solid #ffa273;
     transition:color 0.4s,border 0.4s;
 }
+
+.loader {
+    margin-top:12px;
+    display:inline-block;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid gray;
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
