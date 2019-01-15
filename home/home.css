@@ -17,6 +17,21 @@ body,html{
     }
 }
 
+@keyframes loadbar {
+    0%{
+        width:0px;
+        background-color: rgba(253, 239, 230);
+    }
+    50%{
+        width:250px;
+        background-color:#ffbd9d;
+    }
+    100%{
+        width:500px;
+        background-color: lightsalmon;
+    }
+}
+
 .title{
     background-color:rgba(253, 239, 230);
     height:500px;
@@ -38,13 +53,23 @@ body,html{
 .content{
     background-color:rgba(253, 239, 230);
 }
+
 .contain{
     display: flex;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.intro p{
+    position: relative;
 }
 
 .img{
     width:300px;
-    background-color:lightsalmon;
+    background-image: url("Webp.net-gifmaker.gif");
+    background-position-x: -340px;
+    background-position-y:  60px;
+    background-repeat: no-repeat;
+    background-color: white;
 }
 
 .intro{
@@ -60,6 +85,9 @@ body,html{
     margin-bottom: 3em;
     background: rgba(255, 255, 255, 0.8);
     box-shadow: #333030c4 10px 10px 15px 0px;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    position: relative;
 }
 
 .selectBar{
@@ -120,6 +148,11 @@ footer img{
     width:100px;
 }
 
+.Author1 p{
+    bottom:105px;
+    left:170px;
+}
+
 .Author2 img{
     margin-top:50px;
     margin-left: 40px;
@@ -127,6 +160,11 @@ footer img{
     border:2px solid #af9dff;
     height:100px;
     width:100px;
+}
+
+.Author2 p{
+    bottom:120px;
+    left:170px;
 }
 
 .design1 img{
@@ -138,6 +176,11 @@ footer img{
     width:100px;
 }
 
+.design1 p{
+    bottom:105px;
+    left:170px;
+}
+
 .program1 img{
     margin-top:50px;
     margin-left: 40px;
@@ -147,6 +190,11 @@ footer img{
     width:100px;
 }
 
+.program1 p{
+    bottom:105px;
+    left:170px;
+}
+
 .program2 img{
     margin-top:50px;
     margin-left: 40px;
@@ -154,4 +202,35 @@ footer img{
     border:2px solid #ffbd9d;
     height:100px;
     width:100px;
+}
+
+.program2 p{
+    bottom:105px;
+    left:170px;
+}
+
+
+.hidden{
+    display:none!important;
+}
+
+.loading{
+    background-color: rgba(0, 0, 0, 0.90);
+    height:721px;
+    width:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar{
+    height:30px;
+    width:500px;
+    animation: loadbar 2s;
+    background: -webkit-linear-gradient(left,rgba(253, 239, 230),#ffbd9d,lightsalmon);
+}
+
+.intro a:hover{
+    box-shadow: #ffffff 0px 0px 0px 0px;
+    transform: translate(10px,10px);
 }
