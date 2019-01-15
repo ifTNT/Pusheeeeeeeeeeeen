@@ -54,6 +54,10 @@ body,html{
     background-color:rgba(253, 239, 230);
 }
 
+.content a{
+    text-decoration: none;
+}
+
 .contain{
     display: flex;
     font-family: 'Noto Sans TC', sans-serif;
@@ -233,4 +237,11 @@ footer img{
 .intro a:hover{
     box-shadow: #ffffff 0px 0px 0px 0px;
     transform: translate(10px,10px);
+}
+
+.selected{
+    color:white!important;
+    cursor:pointer;
+    border-bottom: 10px solid #ffa273;
+    transition:color 0.4s,border 0.4s;
 }
