@@ -1,11 +1,7 @@
 body,html{
     margin: 0px;
     padding:0px;
-<<<<<<< HEAD
-    overflow:hidden;
-=======
     overflow-x: hidden;
->>>>>>> 4f172ec27d51fde065957d630f61e32a3d0c84df
 }
 
 @keyframes fadein {
