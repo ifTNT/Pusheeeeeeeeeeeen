@@ -1,0 +1,113 @@
+html, body{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: rgba(253, 239, 230);
+}
+.title{
+    background-color:rgba(253, 239, 230);
+    height:350px;
+    color:#5b4b00;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.title img{
+    animation: peepin 3s ease;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    position: relative;
+}
+
+@keyframes peepin{
+    0%{top:200px;}
+    100%{top:0;}
+}
+
+.text{
+    font-family: 'Coiny', cursive;
+    font-size: 60px;
+    width: 100%;
+}
+
+.selectBar{
+    display: flex;
+    justify-content: flex-end;
+    height:50px;
+    background-color:#ffbd9d;
+}
+
+.selectBar a{
+    box-sizing: border-box;
+    font-size: 25px;
+    letter-spacing: 0.08em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    /*border:2px solid #ff9d6f;*/
+    /*transform: rotate(-12deg);*/
+    padding:10px;
+    margin-right:20px;
+    font-family: 'Righteous', cursive;
+}
+
+@media (max-width: 485px){
+    .selectBar a{
+        font-size: 5vw;
+    }
+}
+
+.selectBar a:hover, .selectBar .selected{
+    color:white;
+    cursor:pointer;
+    border-bottom: 10px solid #ffa273;
+    transition:color 0.4s,border 0.4s;
+}
+
+footer{
+    color:white;
+    letter-spacing: 6px;
+    font-size: 40px;
+    font-family: 'Righteous', cursive;
+    background-color:rgb(70, 36, 16);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
+footer img{
+    height:60px;
+    padding: 0px 15px 0px 15px;
+    background-size: contain;
+    background-repeat: no-repeat; 
+}
+
+.container{
+    height: calc(100vh - 100px);
+}
+
+.butt{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: solid 50px #ffbd9d;
+    overflow: hidden;
+}
+.butt img{
+    display: inline-block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
