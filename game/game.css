@@ -95,7 +95,9 @@ footer img{
 }
 
 .container{
+    display:flex;
     height: calc(100vh - 100px);
+    justify-content: space-between;
 }
 
 .butt{
@@ -110,4 +112,27 @@ footer img{
     width: 100%;
     max-width: 800px;
     height: auto;
+}
+
+.container .items{
+    background-color: lightcoral    ;
+    height:calc(100vh - 100px);
+    width:450px;
+}
+
+.container .items .object{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.container .items .object img{
+    border:4px solid white;
+    border-radius: 20px;
+    height:250px;
+    width:250px;
+    margin:10px;
+    margin-bottom: 20px;
 }
