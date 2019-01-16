@@ -18,6 +18,13 @@ body{
     align-items: flex-end;
     flex-wrap: wrap;
     overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+}
+.fakeTitle{
+    height: 350px;
+    width: 100%;
 }
 
 .title img{
@@ -98,20 +105,29 @@ footer img{
     height: calc(100vh - 100px);
     width: 100%;
     position: relative;
+    background-color:rgba(253, 239, 230);
 }
 
 .butt{
     width: 100%;
-    display: flex;
-    justify-content: center;
     border-top: solid 50px #ffbd9d;
     overflow: hidden;
 }
-.butt img{
-    display: inline-block;
-    width: 100%;
+.butt .img{
+    background-image: url("img/tumblr_nw8mthksql1qfkm6lo1_640.gif.png");
+    background-size: 800px auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 90%;
+    margin: 0 auto;
     max-width: 800px;
-    height: auto;
+    height: 300px;
+}
+@media (max-width: 800px){
+    .butt .img{
+        background-size: 100% auto;
+        height: 40vw;
+    }
 }
 
 /*
@@ -139,7 +155,13 @@ footer img{
     height: 100%;
     background: rgba(255,255,255,0.5);
     float: left;
+    overflow-y: scroll;
 }
+
+.clothFolder::-webkit-scrollbar { 
+    display: none; 
+}
+
 .centerBox canvas{
     display: inline-block;
     float: left;
@@ -147,7 +169,7 @@ footer img{
 .clothFolder img{
     display: inline-block;
     width: 100%;
-    max-width: 100px;
+    max-width: 120px;
     margin-left: 5px;
 }
 .rightHandSide{
@@ -158,7 +180,7 @@ footer img{
 .tray{
     margin: 0 auto;
     width: 5em;
-    font-size: 30px;
+    font-size: 40px;
     display: flex;
     justify-content: space-between;
 }
@@ -166,4 +188,7 @@ footer img{
     cursor: pointer;
     color: lightsalmon;
 
+}
+.clearFloat{
+    clear: both;
 }
