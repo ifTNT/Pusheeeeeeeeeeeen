@@ -57,7 +57,15 @@ class App{
         }
     }
     saveImg(e){
-        this.downloadURI(this.contain.querySelector("canvas").toDataURL(), 'Pusheen.png')
+        fetch('https://uinames.com/api/?region=United%20States')
+        .then(r=>r.json())
+        .then((function(d){
+            document.querySelector("body").style.filter = "brightness(0) invert(1)";
+            setTimeout((function(){
+                document.querySelector("body").style.filter = "";
+                this.downloadURI(this.contain.querySelector("canvas").toDataURL(), `Pusheen_${d.name}_${d.surname}.png`);
+            }).bind(this),50);
+        }).bind(this));
     }
     downloadURI(uri, name) {
         let link = document.createElement("a");
