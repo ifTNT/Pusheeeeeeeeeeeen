@@ -18,6 +18,13 @@ body{
     align-items: flex-end;
     flex-wrap: wrap;
     overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+}
+.fakeTitle{
+    height: 350px;
+    width: 100%;
 }
 
 .title img{
@@ -73,12 +80,18 @@ body{
     border-bottom: 10px solid #ffa273;
     transition:color 0.4s,border 0.4s;
 }
+.bg{
+    background: rgba(253, 239, 230);
+    width: 100%;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
 .container{
     max-width: 1215px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 20px auto 10px auto;
+    margin: 0 auto 10px auto;
     background-color: #ffbd9d;
 }
 
@@ -102,6 +115,35 @@ body{
     transform: translate(-10px,-10px);
     border: solid 5px #ffbd9d;
 }
+
+.butt{
+    width: 100%;
+    border-top: solid 50px #ffbd9d;
+    overflow: hidden;
+}
+.butt .img{
+    background-image: url("img/tumblr_nw8mthksql1qfkm6lo1_640.gif.png");
+    background-size: 800px auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 90%;
+    margin: 0 auto;
+    max-width: 800px;
+    height: 300px;
+}
+@media (max-width: 800px){
+    .butt .img{
+        background-size: 100% auto;
+        height: 40vw;
+    }
+}
+/*.butt img{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}*/
 
 footer{
     color:white;
