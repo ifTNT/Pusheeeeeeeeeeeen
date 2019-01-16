@@ -182,12 +182,13 @@ footer img{
 
 .tray{
     box-sizing: border-box;
-    padding-top: 1em;
+    padding: 1em 0.5em 0.05em 0.5em;
     margin: 0 auto;
-    width: 5em;
+    width: 6em;
     font-size: 40px;
     display: flex;
     justify-content: space-between;
+    border-bottom: solid 4px black;
 }
 .tray i:hover{
     cursor: pointer;
