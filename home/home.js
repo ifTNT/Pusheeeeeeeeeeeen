@@ -10,13 +10,14 @@ setTimeout(function(){
  document.addEventListener('scroll',meow);
  function meow(event){
     cat.src='main.png';
-    pos=scrollY;
+    pos=window.scrollY;
     if(pos>0){
-        cat.style.right=pos+'px';
+        cat.style.right=pos*((window.innerWidth-100)/window.innerHeight)+'px';
         cat.style.transition="all 0.1s";
     }
-    if(pos>=1233){
+    //if(pos>=scrollHeight){
+    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight){
         cat.src='pusheen-gif-pusheen-love-pusheen-stuff-dancing-cat-kawaii-cat-cute-pusheen-cat-png-324_307.png';
     }
-    console.log(pos)
+    //console.log(pos)
  }
