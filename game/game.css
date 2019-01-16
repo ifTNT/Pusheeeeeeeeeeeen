@@ -28,7 +28,7 @@ body{
 }
 
 .title img{
-    animation: peepin 3s ease;
+    animation: peepin 2s ease;
     width: 100%;
     max-width: 500px;
     height: auto;
@@ -103,7 +103,7 @@ footer img{
 
 .container{
     display:flex;
-    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
     width: 100%;
     position: relative;
     background-color:rgba(253, 239, 230);
@@ -146,17 +146,38 @@ footer img{
 }
 .centerBox{
     width: 1010px;
-    height: 100%;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .clothFolder{
     display: inline-block;
     width: 500px;
-    height: 100%;
     background: rgba(255,255,255,0.5);
-    float: left;
     overflow-y: scroll;
-    border:3px solid lightsalmon;
+    border-left:3px solid lightsalmon;
+    border-right:3px solid lightsalmon;
+  
+    box-sizing: border-box;
+}
+
+@media (max-width: 515px){
+    .clothFolder{
+        width: 98vw;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .clothFolder img{
+        display: block;
+    }
+    .centerBox{
+        justify-content: flex-start;
+    }
+    .centerBox .rightHandSide{
+        width: 98vw;
+    }
 }
 
 .clothFolder::-webkit-scrollbar { 
@@ -165,25 +186,30 @@ footer img{
 
 .centerBox canvas{
     display: inline-block;
-    float: left;
+    margin: 0 auto;
 }
 .clothFolder img{
     display: inline-block;
     width: 100%;
-    max-width: 120px;
+    max-width: 118px;
+    max-height: 118px;
     margin-left: 5px;
 }
 .rightHandSide{
     width: 500px;
-    float: left;
+    text-align: center;
+    overflow: hidden;
 }
 
 .tray{
+    box-sizing: border-box;
+    padding: 1em 0.5em 0.05em 0.5em;
     margin: 0 auto;
-    width: 5em;
+    width: 6em;
     font-size: 40px;
     display: flex;
     justify-content: space-between;
+    border-bottom: solid 4px black;
 }
 .tray i:hover{
     cursor: pointer;
