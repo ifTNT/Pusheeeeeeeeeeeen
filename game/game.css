@@ -156,7 +156,9 @@ footer img{
     background: rgba(255,255,255,0.5);
     float: left;
     overflow-y: scroll;
-    border:3px solid lightsalmon;
+    border-left:3px solid lightsalmon;
+    border-right:3px solid lightsalmon;
+    box-sizing: border-box;
 }
 
 .clothFolder::-webkit-scrollbar { 
@@ -170,7 +172,7 @@ footer img{
 .clothFolder img{
     display: inline-block;
     width: 100%;
-    max-width: 120px;
+    max-width: 118px;
     margin-left: 5px;
 }
 .rightHandSide{
