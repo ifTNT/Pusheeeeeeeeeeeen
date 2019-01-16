@@ -81,6 +81,14 @@ body{
     margin: 20px auto 10px auto;
     background-color: #ffbd9d;
 }
+
+@media (max-width: 612px){
+    .container{
+        justify-content: space-around;
+        background-color: rgba(0,0,0,0);
+    }
+}
+
 .container img{
     width: 300px;
     height: 300px;
