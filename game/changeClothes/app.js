@@ -1,58 +1,71 @@
 class App{
     constructor(_contain){
         this.contain = _contain;
-        this.gameLayer = document.createElement('div');
-        this.gameLayer.classList.add('gamelayer');
-        this.ghostLayer = document.createElement('div');
-        this.ghostLayer.classList.add('ghostlayer');
-        this.ghostLayer.style['pointer-events'] = "none";
+        this.ctx = this.contain.querySelector("canvas").getContext("2d");
+        this.modelImg = new Image();
+        this.modelImg.addEventListener('load',(function(){
+            this.ctx.drawImage(this.modelImg,0,50,500,382);
+        }).bind(this));
+        this.modelImg.src="img/changeCloth/model.png";
 
-        this.dragging = false;
+        this.clothes = [];
 
-        document.addEventListener('createGhost', this.createGhost.bind(this));
-        this.ghostLayer.addEventListener('pointerup',this.releaseGhost.bind(this));
-        this.ghostLayer.addEventListener('pointermove',this.onDrag.bind(this));
+        this.draw = this.draw.bind(this);
+        document.addEventListener('drawImg', this.draw);
+        this.restore = this.restore.bind(this);
+        this.contain.querySelector(".fa-undo-alt").addEventListener('click', this.restore);
+        this.reset = this.reset.bind(this);
+        this.contain.querySelector(".fa-trash-alt").addEventListener('click', this.reset);
+        this.saveImg = this.saveImg.bind(this);
+        this.contain.querySelector(".fa-camera").addEventListener('click', this.saveImg);
 
-        new Cloth(this.gameLayer, "img/tumblr_nw8mthksql1qfkm6lo1_640.gif.png", 0);
-
-        this.contain.appendChild(this.gameLayer);
-        this.contain.appendChild(this.ghostLayer);
+        for(let i in clothData){
+            console.log(i);
+            new Cloth(this.contain.querySelector(".clothFolder"), i);
+        }
     }
-
-    createGhost(e){
-        this.ghostLayer.style['pointer-events'] = ""; //to cache point up
-        this.dragging = true;
-        this.flyingGhost = document.createElement('img');
-        this.flyingGhost.src = e.detail.img;
-        console.log(this.ghostLayer.getBoundingClientRect().left, this.ghostLayer.getBoundingClientRect().top);
-        console.log(e.detail);
-        this.f_originX = e.detail.absPos.x;
-        this.f_originY = e.detail.absPos.y;
-        this.f_totalX = 0;
-        this.f_totalY = 0;
-
-        //let realX = (e.detail.absPos.x-e.detail.relPos.x)-this.ghostLayer.getBoundingClientRect().left;
-        //let realY = (e.detail.absPos.y-e.detail.relPos.y)-this.ghostLayer.getBoundingClientRect().top;
-        let realX = e.detail.absPos.x-this.ghostLayer.getBoundingClientRect().left;
-        let realY = e.detail.absPos.y-this.ghostLayer.getBoundingClientRect().top;
-        console.log(realX, realY);
-        this.f_initX = realX;
-        this.f_initY = realY;
-        this.flyingGhost.style.top = `${realY}px`;
-        this.flyingGhost.style.left = `${realX}px`;
-        this.ghostLayer.appendChild(this.flyingGhost);
-
-        //TODO spawn in right position
+    draw(e){
+        let newImg = new Image();
+        let that = {
+            'ctx': this.ctx,
+            'newImg': newImg,
+            'data': clothData[e.detail.id]
+        }
+        newImg.addEventListener('load',(function(){
+            this.ctx.drawImage(this.newImg,this.data.x,this.data.y,this.data.w,this.data.h);
+        }).bind(that));
+        newImg.src='img/changeCloth/'+clothData[e.detail.id].img;
+        this.clothes.push({'id':e.detail.id, 'img':newImg});
     }
-    releaseGhost(){
-        this.ghostLayer.style['pointer-events'] = "none"; //Prevent block event
-        this.dragging = false;
+    reset(e){
+        this.ctx.clearRect(0, 0, 500, 500);
+        this.ctx.drawImage(this.modelImg,0,50,500,382);
+        this.clothes.forEach((d)=>{
+            document.dispatchEvent(new CustomEvent('restore', {'detail':{'id':d.id}}));
+        });
+        this.clothes = [];
     }
-    onDrag(e){
-        if(!this.dragging) return;
-        e.preventDefault();
-        this.flyingGhost.style.left = `${this.f_initX+e.clientX-this.f_originX}px`;
-        this.flyingGhost.style.top = `${this.f_initY+e.clientY-this.f_originY}px`;
-
+    restore(e){
+        let lastMove = this.clothes.pop();
+        if(lastMove==undefined) return;
+        document.dispatchEvent(new CustomEvent('restore', {'detail':{'id':lastMove.id}}));
+        this.ctx.clearRect(0, 0, 500, 500);
+        this.ctx.drawImage(this.modelImg,0,50,500,382);
+        for(let i of this.clothes){
+            let data = clothData[i.id];
+            this.ctx.drawImage(i.img,data.x,data.y,data.w,data.h);
+        }
+    }
+    saveImg(e){
+        this.downloadURI(this.contain.querySelector("canvas").toDataURL(), 'Pusheen.png')
+    }
+    downloadURI(uri, name) {
+        let link = document.createElement("a");
+        //link.style.display="none";
+        link.download = name;
+        link.href = uri;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
 }
