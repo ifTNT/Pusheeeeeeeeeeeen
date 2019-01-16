@@ -28,7 +28,7 @@ body{
 }
 
 .title img{
-    animation: peepin 3s ease;
+    animation: peepin 2s ease;
     width: 100%;
     max-width: 500px;
     height: auto;
