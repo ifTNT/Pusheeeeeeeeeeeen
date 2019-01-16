@@ -262,3 +262,12 @@ footer img{
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+  .pull{
+      margin-top:-150px;
+      position: fixed;
+      height:150px;
+      width:150px;
+      right:2vw;
+      bottom:4vh;
+  }
