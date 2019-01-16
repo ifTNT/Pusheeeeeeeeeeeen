@@ -156,6 +156,7 @@ footer img{
     background: rgba(255,255,255,0.5);
     float: left;
     overflow-y: scroll;
+    border:3px solid lightsalmon;
 }
 
 .clothFolder::-webkit-scrollbar { 
