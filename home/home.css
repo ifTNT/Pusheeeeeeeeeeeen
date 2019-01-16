@@ -65,7 +65,21 @@ body,html{
 }
 
 .intro p{
-    position: relative;
+    margin-left: 1em;
+    word-wrap: break-word;
+    display: inline-block;
+    width: 70%;
+}
+
+@media (max-width: 663px){
+    .intro a{
+        display: flex !important;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .intro a img{
+        margin-left: 0px;
+    }
 }
 
 .img{
@@ -75,6 +89,11 @@ body,html{
     background-position-y:  160px;
     background-repeat: no-repeat;
     background-color: white;
+}
+@media (max-width:946px){
+    .img{
+        display: none;
+    }
 }
 
 .intro{
@@ -86,7 +105,7 @@ body,html{
     animation: change 2s;
     margin:50px;
     display: block;
-    height: 200px;
+    min-height: 200px;
     margin-bottom: 3em;
     background: rgba(255, 255, 255, 0.8);
     box-shadow: #333030c4 10px 10px 15px 0px;
@@ -123,6 +142,11 @@ body,html{
     border-bottom: 10px solid #ffa273;
     transition:color 0.4s,border 0.4s;
 }
+@media (max-width: 485px){
+    .selectBar a{
+        font-size: 5vw;
+    }
+}
 
 footer{
     color:white;
@@ -153,11 +177,6 @@ footer img{
     width:100px;
 }
 
-.Author1 p{
-    bottom:120px;
-    left:170px;
-}
-
 .Author2 img{
     margin-top:50px;
     margin-left: 40px;
@@ -165,11 +184,6 @@ footer img{
     border:2px solid #af9dff;
     height:100px;
     width:100px;
-}
-
-.Author2 p{
-    bottom:120px;
-    left:170px;
 }
 
 .design1 img{
@@ -181,11 +195,6 @@ footer img{
     width:100px;
 }
 
-.design1 p{
-    bottom:120px;
-    left:170px;
-}
-
 .program1 img{
     margin-top:50px;
     margin-left: 40px;
@@ -193,11 +202,6 @@ footer img{
     border:2px solid #42a139;
     height:100px;
     width:100px;
-}
-
-.program1 p{
-    bottom:120px;
-    left:170px;
 }
 
 .program2 img{
@@ -208,12 +212,6 @@ footer img{
     height:100px;
     width:100px;
 }
-
-.program2 p{
-    bottom:120px;
-    left:170px;
-}
-
 
 .hidden{
     display:none!important;
