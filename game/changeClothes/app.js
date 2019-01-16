@@ -4,7 +4,7 @@ class App{
         this.ctx = this.contain.querySelector("canvas").getContext("2d");
         this.modelImg = new Image();
         this.modelImg.addEventListener('load',(function(){
-            this.ctx.drawImage(this.modelImg,0,50,500,382);
+            this.ctx.drawImage(this.modelImg,0,100,500,382);
         }).bind(this));
         this.modelImg.src="img/changeCloth/model.png";
 
@@ -32,14 +32,14 @@ class App{
             'data': clothData[e.detail.id]
         }
         newImg.addEventListener('load',(function(){
-            this.ctx.drawImage(this.newImg,this.data.x,this.data.y,this.data.w,this.data.h);
+            this.ctx.drawImage(this.newImg,this.data.x,this.data.y+50,this.data.w,this.data.h);
         }).bind(that));
         newImg.src='img/changeCloth/'+clothData[e.detail.id].img;
         this.clothes.push({'id':e.detail.id, 'img':newImg});
     }
     reset(e){
         this.ctx.clearRect(0, 0, 500, 500);
-        this.ctx.drawImage(this.modelImg,0,50,500,382);
+        this.ctx.drawImage(this.modelImg,0,100,500,382);
         this.clothes.forEach((d)=>{
             document.dispatchEvent(new CustomEvent('restore', {'detail':{'id':d.id}}));
         });
@@ -50,10 +50,10 @@ class App{
         if(lastMove==undefined) return;
         document.dispatchEvent(new CustomEvent('restore', {'detail':{'id':lastMove.id}}));
         this.ctx.clearRect(0, 0, 500, 500);
-        this.ctx.drawImage(this.modelImg,0,50,500,382);
+        this.ctx.drawImage(this.modelImg,0,100,500,382);
         for(let i of this.clothes){
             let data = clothData[i.id];
-            this.ctx.drawImage(i.img,data.x,data.y,data.w,data.h);
+            this.ctx.drawImage(i.img,data.x,data.y+50,data.w,data.h);
         }
     }
     saveImg(e){
