@@ -26,13 +26,13 @@ const clothData = {
     },
     'cowboy':{
         'img': 'Picture8.png',
-        'x':200, 'y': 0,
-        'w': 100, 'h': 100
+        'x':195, 'y': 20,
+        'w': 120, 'h': 120
     },
     'baseball':{
         'img': 'Picture9.png',
-        'x':200, 'y': 0,
-        'w': 100, 'h': 100
+        'x':170, 'y': 25,
+        'w': 120, 'h': 120
     },
     'christmas':{
         'img': 'Picture11.png',
@@ -46,8 +46,8 @@ const clothData = {
     },
     'mustash':{
         'img': 'Picture17.png',
-        'x':210, 'y': 130,
-        'w': 70, 'h': 70
+        'x':210, 'y': 124,
+        'w': 70, 'h': 78
     },
     '鬍子':{
         'img': '鬍子.png',
