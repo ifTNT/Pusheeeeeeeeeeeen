@@ -20,7 +20,7 @@ class App{
         this.contain.querySelector(".fa-camera").addEventListener('click', this.saveImg);
 
         for(let i in clothData){
-            console.log(i);
+            //console.log(i);
             new Cloth(this.contain.querySelector(".clothFolder"), i);
         }
     }
